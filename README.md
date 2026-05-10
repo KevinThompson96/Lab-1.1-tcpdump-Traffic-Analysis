@@ -47,6 +47,7 @@ Reading the raw packet content from the session.pcap file revealed HTTP POST to 
 ![HTTP Payload](Screenshots/HTTP-Payload.png)
 
 -X hex and ASCII payload
+
 -v verbose output
 
 ![HTTP Payload Output](Screenshots/HTTP-Payload-Output.png)
