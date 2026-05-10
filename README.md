@@ -64,8 +64,10 @@ And used the dig command to send traffic while tcpdump was listening
 ![Dig](Screenshots/Dig.png)
 
 ## Takeaways:
-This lab showed how clear attacker behaviour sticks out in raw packet captures, once understanding how and what to filter for. It also showed how readable and dangerous plaintext HTTP traffic is. Credentials were fully visible in the packet payload. 
+This lab showed how clear attacker behaviour sticks out in raw packet captures, once understanding how and what to filter for. It also showed how readable and dangerous plaintext HTTP traffic is. Credentials were fully visible in the packet payload.
+
 The ./env probe is a common automated scan on the internet. Here, even with a 404 error meaning the file wasn’t there, it let the attacker know a server is live and worth further probing; the brute-force password attack followed subsequently. 
+
 From a security perspective, enforcing HTTPS in production, limiting wp-login attempts, implementing firewall rules for ./env probing, and centralized logging/alerting (SIEM) are some controls that could mitigated this incident. 
 
 
