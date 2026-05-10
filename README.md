@@ -7,7 +7,7 @@ A PCAP file was obtained from a compromised webserver at Alpha.Inc. It was my jo
 
 ## 1: Packet Header Examination
 
-screenshot 1
+![Header Examination](Screenshots/Header-Examination.png)
 
 -n no DNS
 
@@ -17,50 +17,50 @@ screenshot 1
 
 -# display packet number
 
-screenshot 2
+![Header Examination Output](Screenshots/Header-Examination-Output.png)
 
 ## 2: Filtering the Traffic
 
 Filtering the TCP traffic between 135.125.217.54 and 10.130.8.94 on ports 44366 and 80 showed a GET request for ./env. The server responded with a 404 not found error.
 
-screenshot 3
+![Filtering Traffic](Screenshots/Filtering-Traffic.png)
 
-screenshot 4
+![Filtering Traffic Output](Screenshots/Filtering-Traffic-Output.png)
 
 ## 3: Write/Read to session.pcap
 
 Writing (to a new file) the output of traffic between 20.106.124.93 and 10.130.9.94 on ports 44366 and 80
 
-screenshot 5
+![Writing Filtered Traffic](Screenshots/Writing-Filtered-Traffic.png)
 
 And reading the new session.pcap file 
 
-screenshot 6
+![Reading Filtered Traffic](Screenshots/Reading-Filtered-Traffic.png)
 
 I saw the filtered WordPress login packets.
 
-screenshot 7
+![WordPress Login](Screenshots/WordPress-Login.png)
 
 ## 4: Examine Packet Contents – HTTP payloads – Visible logins
 Reading the raw packet content from the session.pcap file revealed HTTP POST to /wp-login.php with a Hydra user-agent (brute force password tool)
 
-screenshot 8
+![HTTP Payload](Screenshots/HTTP-Payload.png)
 
 -X hex and ASCII payload
 -v verbose output
 
-screenshot 9
+![HTTP Payload Output](Screenshots/HTTP-Payload-Output.png)
 
 ## 5: Capturing Live Traffic – Correlating with dig 
 Capture live UDP traffic on port 53 (DNS) and write the captured contents to a pcap file
 
-screenshot 10
+![Live Capture](Screenshots/Live-Capture.png)
 
 -i interface
 
 And used the dig command to send traffic while tcpdump was listening
 
-screenshot 11
+![Dig](Screenshots/Dig.png)
 
 ## Takeaways:
 This lab showed how clear attacker behaviour sticks out in raw packet captures, once understanding how and what to filter for. It also showed how readable and dangerous plaintext HTTP traffic is. Credentials were fully visible in the packet payload. 
