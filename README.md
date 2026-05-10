@@ -52,7 +52,7 @@ Reading the raw packet content from the session.pcap file revealed HTTP POST to 
 
 ![HTTP Payload Output](Screenshots/HTTP-Payload-Output.png)
 
-## 5: Capturing Live Traffic – Correlating with dig 
+## 5: Capturing Live Traffic With dig 
 Capture live UDP traffic on port 53 (DNS) and write the captured contents to a pcap file
 
 ![Live Capture](Screenshots/Live-Capture.png)
