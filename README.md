@@ -68,7 +68,7 @@ This lab showed how clear attacker behaviour sticks out in raw packet captures, 
 
 The ./env probe is a common automated scan on the internet. Here, even with a 404 error meaning the file wasn’t there, it let the attacker know a server is live and worth further probing; the brute-force password attack followed subsequently. 
 
-From a security perspective, enforcing HTTPS in production, limiting wp-login attempts, implementing firewall rules for ./env probing, and centralized logging/alerting (SIEM) are some controls that could mitigated this incident. 
+From a security perspective, enforcing HTTPS in production, limiting wp-login attempts, implementing firewall rules for ./env probing, and centralized logging/alerting (SIEM) are some controls that could have mitigated this incident. 
 
 
 
